@@ -39,9 +39,9 @@ export function SidebarContent({ menuItems, role = "student", onClose, isSheet }
   const { mode, toggleMode } = useTheme();
 
   return (
-    <div className="flex flex-col h-full bg-white">
+    <div className="flex flex-col h-full bg-sidebar">
       {/* Logo */}
-      <div className="px-5 pt-6 pb-4 border-b border-slate-100">
+      <div className="px-5 pt-6 pb-4 border-b border-border">
         {isSheet && (
           <button
             onClick={onClose}
@@ -81,7 +81,7 @@ export function SidebarContent({ menuItems, role = "student", onClose, isSheet }
               <div className={cn("sidebar-item", isActive && "active")}>
                 <span className={cn(
                   "transition-colors",
-                  isActive ? "text-purple-600" : "text-slate-400"
+                  isActive ? "text-purple-600 dark:text-purple-400" : "text-slate-400 dark:text-slate-500"
                 )}>
                   {iconMap[item.icon]}
                 </span>
@@ -101,7 +101,7 @@ export function SidebarContent({ menuItems, role = "student", onClose, isSheet }
         {role !== "student" && (
           <Link href="/student/dashboard">
             <div className="sidebar-item text-xs">
-              <User size={15} className="text-slate-400" />
+              <User size={15} className="text-slate-400 dark:text-slate-500" />
               Student Portal
             </div>
           </Link>
@@ -109,7 +109,7 @@ export function SidebarContent({ menuItems, role = "student", onClose, isSheet }
         {role !== "admin" && (
           <Link href="/admin/dashboard">
             <div className="sidebar-item text-xs">
-              <Settings size={15} className="text-slate-400" />
+              <Settings size={15} className="text-slate-400 dark:text-slate-500" />
               Admin Portal
             </div>
           </Link>
@@ -117,14 +117,14 @@ export function SidebarContent({ menuItems, role = "student", onClose, isSheet }
         {role !== "faculty" && (
           <Link href="/faculty/dashboard">
             <div className="sidebar-item text-xs">
-              <GraduationCap size={15} className="text-slate-400" />
+              <GraduationCap size={15} className="text-slate-400 dark:text-slate-500" />
               Faculty Portal
             </div>
           </Link>
         )}
         <button
           onClick={toggleMode}
-          className="w-full sidebar-item text-xs text-purple-600 hover:bg-purple-50 dark:hover:bg-purple-950/40 cursor-pointer font-medium"
+          className="w-full sidebar-item text-xs text-purple-600 dark:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-950/40 cursor-pointer font-medium"
         >
           {mode === "dark" ? (
             <>

@@ -119,7 +119,7 @@ export default function CourseDetailPage() {
 
               <TabsContent value="modules">
                 {course.modules_list.length > 0 ? (
-                  <Accordion type="single" collapsible defaultValue="module-5" className="space-y-2">
+                  <Accordion defaultValue={["module-5"]} className="space-y-2">
                     {course.modules_list.map((mod) => (
                       <AccordionItem
                         key={mod.id}

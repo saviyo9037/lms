@@ -349,12 +349,12 @@ h6 {
 }
 
 .theme-dark {
-  background-color: #0F172A !important;
+  background-color: #0A0914 !important;
   color: #F8FAFC !important;
 }
 
 .theme-dark .bg-white {
-  background-color: #1E293B !important;
+  background-color: #0A0914 !important;
   color: #F8FAFC !important;
 }
 
@@ -368,5 +368,19 @@ h6 {
 
 .theme-dark .border-slate-100,
 .theme-dark .border-slate-200 {
-  border-color: #334155 !important;
+  border-color: #1E1B33 !important;
+}
+
+.theme-dark .sidebar-item {
+  color: #94A3B8 !important;
+}
+
+.theme-dark .sidebar-item:hover {
+  background-color: rgba(139, 92, 246, 0.15) !important;
+  color: #C4B5FD !important;
+}
+
+.theme-dark .sidebar-item.active {
+  background-color: rgba(139, 92, 246, 0.2) !important;
+  color: #DDD6FE !important;
 }

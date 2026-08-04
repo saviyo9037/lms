@@ -22,7 +22,7 @@ export default function FacultyLayout({ children }: { children: React.ReactNode 
   useEffect(() => { setMobileOpen(false); }, [pathname]);
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#F8FAFC]">
+    <div className="flex h-screen overflow-hidden bg-background">
       <aside className="hidden lg:flex w-[220px] shrink-0 bg-white border-r border-slate-100 h-screen overflow-y-auto flex-col sidebar-desktop">
         <SidebarContent menuItems={facultyMenuItems} role="faculty" />
       </aside>

@@ -31,9 +31,9 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
   }, [pathname]);
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#F8FAFC]">
+    <div className="flex h-screen overflow-hidden bg-background">
       {/* ── Desktop Sidebar ─────────────────────────────────────────── */}
-      <aside className="hidden lg:flex w-[220px] shrink-0 bg-white border-r border-slate-100 h-screen overflow-y-auto flex-col">
+      <aside className="hidden lg:flex w-[220px] shrink-0 bg-sidebar border-r border-border h-screen overflow-y-auto flex-col">
         <SidebarContent menuItems={sidebarMenuItems} role="student" />
       </aside>
 
@@ -55,7 +55,7 @@ export default function StudentLayout({ children }: { children: React.ReactNode 
               animate={{ x: 0 }}
               exit={{ x: -240 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="fixed left-0 top-0 bottom-0 w-[240px] bg-white z-50 overflow-y-auto shadow-[4px_0_20px_rgba(0,0,0,0.15)] lg:hidden"
+              className="fixed left-0 top-0 bottom-0 w-[240px] bg-sidebar z-50 overflow-y-auto shadow-[4px_0_20px_rgba(0,0,0,0.15)] lg:hidden"
             >
               <SidebarContent
                 menuItems={sidebarMenuItems}

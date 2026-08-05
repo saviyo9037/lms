@@ -259,7 +259,7 @@ export default function AIStudyPlannerPage() {
                 {formatTimer(timerSeconds)}
               </div>
               <p className="text-[11px] text-purple-200/80 m-0">
-                {timerMode === "work" ? "🔥 High-Focus Study Session" : "☕ Short Recovery Break"}
+                {timerMode === "work" ? "🔥 High-Focus Study Session" : "☕Short Recovery Break"}
               </p>
               <div className="w-full bg-white/10 h-1.5 rounded-full overflow-hidden mt-3">
                 <div

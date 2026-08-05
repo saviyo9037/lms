@@ -137,7 +137,7 @@ export function Header({ title, subtitle, menuItems, role = "student", userName,
             <DropdownMenuItem className="cursor-pointer text-sm">About Ostrax</DropdownMenuItem>
           </Link>
           <Link href="/admin/dashboard">
-            <DropdownMenuItem className="cursor-pointer text-sm text-purple-600">Admin Portal</DropdownMenuItem>
+            {/* <DropdownMenuItem className="cursor-pointer text-sm text-purple-600">Admin Portal</DropdownMenuItem> */}
           </Link>
         </DropdownMenuContent>
       </DropdownMenu>

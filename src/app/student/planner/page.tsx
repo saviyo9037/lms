@@ -47,7 +47,7 @@ export default function AIStudyPlannerPage() {
       >
         <div className="space-y-1.5 max-w-xl z-10">
           <div className="flex items-center gap-2">
-            <Badge className="bg-orange-500 text-white font-bold text-[10px] uppercase tracking-wider">
+            <Badge className="bg-orange-500 border-none text-white font-bold text-[10px] uppercase tracking-wider">
               AI Adaptive Engine Active
             </Badge>
             <span className="text-purple-200 text-xs flex items-center gap-1">
@@ -159,7 +159,7 @@ export default function AIStudyPlannerPage() {
         </div>
 
         {/* Right Column: Diagnostic Concept Mastery & Focus Widget */}
-        <div className="space-y-6">
+        <div className="space-y-6 flex flex-col">
           {/* Concept Mastery Radar / Diagnostics */}
           <Card className="p-5 rounded-2xl border-slate-100 bg-white shadow-sm space-y-4">
             <div className="flex items-center gap-2">
@@ -189,17 +189,17 @@ export default function AIStudyPlannerPage() {
           </Card>
 
           {/* Pomodoro Timer Box */}
-          <Card className="p-5 rounded-2xl border-slate-100 bg-gradient-to-br from-slate-900 to-purple-950 text-white shadow-md space-y-4 text-center">
+          <Card className="p-5 rounded-2xl border-slate-100 bg-gradient-to-br from-slate-900 to-purple-950 text-white shadow-md flex-1 flex flex-col justify-center text-center">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold uppercase tracking-wider text-purple-300">Pomodoro Focus Timer</span>
               <Badge className="bg-purple-500/20 text-purple-200 text-[10px]">25m / 5m Cycle</Badge>
             </div>
 
-            <div className="text-4xl font-black font-mono tracking-tight text-white py-2">
+            <div className="text-4xl font-black font-mono tracking-tight text-white py-4">
               25 : 00
             </div>
 
-            <div className="flex items-center justify-center gap-3">
+            <div className="flex items-center justify-center gap-3 mt-auto">
               <Button
                 onClick={() => setFocusActive(!focusActive)}
                 className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl text-xs font-bold px-6 py-2 shadow-md"

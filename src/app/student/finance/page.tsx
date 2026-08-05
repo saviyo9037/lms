@@ -15,6 +15,9 @@ const INSTALLMENTS = [
   { term: "Installment 1 (Admission)", amount: 15000, dueDate: "2024-01-15", status: "Paid", receiptNo: "REC-2024-089" },
   { term: "Installment 2 (Mid-Term)", amount: 12500, dueDate: "2024-06-15", status: "Paid", receiptNo: "REC-2024-412" },
   { term: "Installment 3 (OJT Stage)", amount: 12500, dueDate: "2024-11-15", status: "Pending", receiptNo: null },
+  { term: "Caution Deposit", amount: 3000, dueDate: "2024-01-15", status: "Paid", receiptNo: "REC-2024-090" },
+  { term: "Lab Kit Fee", amount: 2500, dueDate: "2024-03-10", status: "Paid", receiptNo: "REC-2024-201" },
+  { term: "Exam & Certification Fee", amount: 1500, dueDate: "2024-08-01", status: "Paid", receiptNo: "REC-2024-388" },
 ];
 
 const SCHOLARSHIPS = [
@@ -26,7 +29,7 @@ export default function FinanceEMIPage() {
   const [activeInstallment, setActiveInstallment] = useState<typeof INSTALLMENTS[0] | null>(null);
 
   return (
-    <div className="p-4 lg:p-6 pb-24 space-y-6 max-w-6xl mx-auto">
+    <div className="p-4 lg:p-6 pb-24 space-y-6">
       {/* Header Banner */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
@@ -35,7 +38,7 @@ export default function FinanceEMIPage() {
       >
         <div className="space-y-1.5 z-10">
           <div className="flex items-center gap-2">
-            <Badge className="bg-orange-500 text-white font-bold text-[10px] uppercase">
+            <Badge className="bg-orange-500 border-none text-white font-bold text-[10px] uppercase">
               Financial ERP & Installments
             </Badge>
             <span className="text-purple-200 text-xs flex items-center gap-1">
@@ -47,19 +50,12 @@ export default function FinanceEMIPage() {
             Transparent breakdown of course fee installments, payment receipts, caution deposits, and scholarship applications.
           </p>
         </div>
-
-        {/* Pending Fee Widget */}
-        <div className="bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/20 text-center z-10 shrink-0">
-          <div className="text-[10px] text-purple-200 uppercase font-semibold">Total Fee Due</div>
-          <div className="text-2xl font-black text-white">₹12,500</div>
-          <div className="text-[10px] text-orange-300 font-medium mt-0.5">Due by Nov 15, 2024</div>
-        </div>
       </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Left 2 Cols: Installment Schedule */}
-        <div className="lg:col-span-2 space-y-6">
-          <Card className="p-5 rounded-2xl border-slate-100 bg-white shadow-sm space-y-4">
+        <div className="lg:col-span-2 space-y-6 flex flex-col h-full">
+          <Card className="p-5 rounded-2xl border-slate-100 bg-white shadow-sm space-y-4 flex-1">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <CreditCard size={18} className="text-purple-600" />
@@ -138,7 +134,7 @@ export default function FinanceEMIPage() {
         </div>
 
         {/* Right Col: Scholarships & Caution Deposit */}
-        <div className="space-y-6">
+        <div className="space-y-6 flex flex-col">
           <Card className="p-5 rounded-2xl border-slate-100 bg-white shadow-sm space-y-4">
             <div className="flex items-center gap-2">
               <Award size={18} className="text-amber-500" />
@@ -160,7 +156,7 @@ export default function FinanceEMIPage() {
           </Card>
 
           {/* Refundable Caution Deposit Ledger */}
-          <Card className="p-5 rounded-2xl border-slate-100 bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-md space-y-2">
+          <Card className="p-5 rounded-2xl border-slate-100 bg-gradient-to-br from-slate-900 to-slate-800 text-white shadow-md space-y-2 flex-1 flex flex-col justify-center">
             <div className="text-xs font-bold uppercase tracking-wider text-slate-400">Caution Deposit Ledger</div>
             <div className="text-2xl font-black text-green-400">₹3,000 (Refundable)</div>
             <p className="text-xs text-slate-300 leading-relaxed m-0">

@@ -156,7 +156,6 @@ h6 {
 
 .metric-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
 }
 
 /* Lesson Cards */
@@ -175,7 +174,6 @@ h6 {
 
 .lesson-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.12);
 }
 
 /* Sidebar item */
@@ -194,13 +192,13 @@ h6 {
 }
 
 .sidebar-item:hover {
-  background: #f5f3ff;
-  color: #6d28d9;
+  background: #ffffff;
+  color: #1e293b;
 }
 
 .sidebar-item.active {
-  background: #f5f3ff;
-  color: #6d28d9;
+  background: #ffffff;
+  color: #1e293b;
   font-weight: 600;
 }
 
@@ -210,7 +208,6 @@ h6 {
   border-radius: 14px;
   padding: 1.25rem;
   color: white;
-  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.3);
 }
 
 .purple-gradient-card {
@@ -218,7 +215,6 @@ h6 {
   border-radius: 14px;
   padding: 1.25rem;
   color: white;
-  box-shadow: 0 8px 24px -4px rgba(76, 29, 149, 0.18);
 }
 
 /* Section heading */
@@ -376,11 +372,12 @@ h6 {
 }
 
 .theme-dark .sidebar-item:hover {
-  background-color: rgba(139, 92, 246, 0.15) !important;
-  color: #C4B5FD !important;
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #F1F5F9 !important;
 }
 
 .theme-dark .sidebar-item.active {
-  background-color: rgba(139, 92, 246, 0.2) !important;
-  color: #DDD6FE !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #F8FAFC !important;
+  font-weight: 600;
 }

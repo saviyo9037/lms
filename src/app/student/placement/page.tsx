@@ -56,7 +56,7 @@ export default function PlacementDrivePage() {
   const [selectedOffer, setSelectedOffer] = useState<typeof CAMPUS_DRIVES[0] | null>(null);
 
   return (
-    <div className="p-4 lg:p-6 pb-24 space-y-6 max-w-6xl mx-auto">
+    <div className="p-4 lg:p-6 pb-24 space-y-6">
       {/* Header Banner */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
@@ -65,7 +65,7 @@ export default function PlacementDrivePage() {
       >
         <div className="space-y-1.5 z-10">
           <div className="flex items-center gap-2">
-            <Badge className="bg-orange-500 text-white font-bold text-[10px] uppercase">
+            <Badge className="bg-orange-500 border-none text-white font-bold text-[10px] uppercase">
               Ostrax Placement Cell ERP
             </Badge>
             <span className="text-purple-200 text-xs flex items-center gap-1">
@@ -77,18 +77,12 @@ export default function PlacementDrivePage() {
             Track live campus drives, view real-time eligibility checks, and follow application progress to final offer letters.
           </p>
         </div>
-
-        {/* ATS Resume Score Badge */}
-        <div className="bg-white/10 backdrop-blur-md p-3.5 rounded-xl border border-white/20 text-center z-10 shrink-0">
-          <div className="text-[10px] text-purple-200 uppercase font-semibold">ATS Resume Match</div>
-          <div className="text-2xl font-black text-white">92%</div>
-          <div className="text-[10px] text-green-300 font-medium mt-0.5">Verified Ostrax Format</div>
-        </div>
       </motion.div>
 
-      {/* Main Drive Listings */}
-      <div className="space-y-4">
-        <h3 className="font-bold text-slate-800 text-base m-0 flex items-center gap-2">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Main Drive Listings */}
+        <div className="lg:col-span-2 space-y-6 flex flex-col">
+          <h3 className="font-bold text-slate-800 text-base m-0 flex items-center gap-2">
           <Building2 size={18} className="text-purple-600" /> Active Campus Recruitment Drives
         </h3>
 
@@ -188,6 +182,17 @@ export default function PlacementDrivePage() {
               )}
             </Card>
           ))}
+        </div>
+        </div>
+
+        {/* Right Sidebar */}
+        <div className="space-y-6 flex flex-col h-full">
+          <Card className="p-5 rounded-2xl border-slate-100 bg-gradient-to-br from-slate-900 to-purple-950 text-white shadow-md flex-1 flex flex-col justify-center text-center">
+            <UserCheck size={32} className="mx-auto text-purple-400 mb-3" />
+            <div className="text-[11px] text-purple-300 uppercase font-bold tracking-wider mb-2">ATS Resume Match</div>
+            <div className="text-6xl font-black text-white mb-4">92%</div>
+            <Badge className="bg-green-500/20 text-green-300 mx-auto border-none w-fit">Verified Ostrax Format</Badge>
+          </Card>
         </div>
       </div>
     </div>

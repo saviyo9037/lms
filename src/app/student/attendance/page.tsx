@@ -16,36 +16,35 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 
-// Generate calendar days for August 2026
-function generateAugustDays() {
+// Generate last 30 days heatmap data starting from Monday
+function generateHeatmapDays() {
   const days = [];
-  const daysInMonth = 31;
-  // August 1, 2026 is a Saturday (day 6 in JS)
-  const firstDayOfWeek = 6;
+  // Last 30 days ending today (Aug 5, 2026)
+  const data: Record<string, string> = {
+    "2026-07-07": "present", "2026-07-08": "present", "2026-07-09": "present", "2026-07-10": "present", "2026-07-11": "present", "2026-07-12": "present", "2026-07-13": "present",
+    "2026-07-14": "present", "2026-07-15": "present", "2026-07-16": "present", "2026-07-17": "present", "2026-07-18": "present", "2026-07-19": "present", "2026-07-20": "present",
+    "2026-07-21": "present", "2026-07-22": "present", "2026-07-23": "present", "2026-07-24": "present", "2026-07-25": "present", "2026-07-26": "present", "2026-07-27": "present",
+    "2026-07-28": "present", "2026-07-29": "absent", "2026-07-30": "present", "2026-07-31": "late",
+    "2026-08-01": "absent", "2026-08-02": "late", "2026-08-03": "present", "2026-08-04": "present", "2026-08-05": "today",
+  };
 
-  // Add blanks
-  for (let i = 0; i < firstDayOfWeek; i++) {
-    days.push({ date: null, status: "blank" });
+  // Start from Monday July 7
+  const start = new Date("2026-07-07");
+  for (let i = 0; i < 35; i++) {
+    const d = new Date(start);
+    d.setDate(start.getDate() + i);
+    const key = d.toISOString().slice(0, 10);
+    const dateNum = String(d.getDate()).padStart(2, "0");
+    const status = data[key] || (i >= 30 ? "future" : "weekend");
+    days.push({ date: dateNum, key, status });
   }
-
-  const statuses = [
-    "present", "present", "absent", "present", "present",
-    "present", "weekend", "weekend", "present", "present",
-    "present", "late", "present", "present", "weekend",
-    "weekend", "present", "present", "present", "present",
-    "present", "weekend", "weekend", "present", "present",
-    "present", "present", "present", "weekend", "weekend", "future"
-  ];
-
-  for (let d = 1; d <= daysInMonth; d++) {
-    days.push({ date: d, status: d === 5 ? "today" : statuses[d - 1] });
-  }
-
   return days;
 }
 
-const calDays = generateAugustDays();
-const dayLabels = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const heatmapDays = generateHeatmapDays();
+const heatmapLabels = ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"];
+const calDays = heatmapDays;
+const dayLabels = heatmapLabels;
 
 export default function AttendancePage() {
   const [isPunchedIn, setIsPunchedIn] = useState(false);
@@ -103,53 +102,74 @@ export default function AttendancePage() {
             />
           </div>
 
-          {/* Calendar */}
+          {/* Attendance Heatmap */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2 }}
             className="bg-white rounded-[14px] border border-slate-100 p-5"
           >
+            {/* Header */}
             <div className="flex items-center justify-between mb-4">
               <div>
-                <h3 className="font-bold text-slate-800">August 2026</h3>
-                <p className="text-xs text-slate-500 mt-0.5">Attendance Calendar</p>
+                <h3 className="font-bold text-slate-800 text-base">Attendance Heatmap (Last 30 Days)</h3>
+                <p className="text-xs text-slate-400 mt-0.5">· 7-column 1:1 square matrix</p>
               </div>
-              <div className="flex gap-3 text-[10px] text-slate-500">
-                <div className="flex items-center gap-1"><div className="w-3 h-3 bg-purple-200 rounded-full" />Present</div>
-                <div className="flex items-center gap-1"><div className="w-3 h-3 bg-red-200 rounded-full" />Absent</div>
-                <div className="flex items-center gap-1"><div className="w-3 h-3 bg-yellow-200 rounded-full" />Late</div>
-                <div className="flex items-center gap-1"><div className="w-3 h-3 bg-orange-500 rounded-full" />Today</div>
-              </div>
+              <a href="#" className="text-xs font-semibold text-orange-500 hover:underline">View attendance portal →</a>
             </div>
 
-            {/* Day headers */}
-            <div className="grid grid-cols-7 mb-2">
-              {dayLabels.map((d) => (
-                <div key={d} className="text-center text-[10px] font-semibold text-slate-400 py-1">{d}</div>
+            {/* Day Column Labels */}
+            <div className="grid grid-cols-7 gap-2 mb-2">
+              {heatmapLabels.map((d) => (
+                <div key={d} className="text-center text-[10px] font-bold text-slate-400 tracking-wider">{d}</div>
               ))}
             </div>
 
-            {/* Days grid */}
-            <div className="grid grid-cols-7 gap-1">
-              {calDays.map((d, i) => (
-                <div key={i} className="aspect-square flex items-center justify-center">
-                  {d.date ? (
-                    <div className={cn(
-                      "w-8 h-8 rounded-full flex items-center justify-center text-xs font-semibold transition-colors",
-                      d.status === "today" ? "bg-orange-500 text-white shadow-md" :
-                      d.status === "present" ? "bg-purple-100 text-purple-700 hover:bg-purple-200" :
-                      d.status === "absent" ? "bg-red-100 text-red-600" :
-                      d.status === "late" ? "bg-yellow-100 text-yellow-700" :
-                      d.status === "weekend" ? "text-slate-300" :
-                      d.status === "future" ? "text-slate-300" :
-                      "text-slate-400"
-                    )}>
-                      {d.date}
-                    </div>
-                  ) : null}
-                </div>
-              ))}
+            {/* Heatmap Grid */}
+            <div className="grid grid-cols-7 gap-2">
+              {heatmapDays.map((d, i) => {
+                const tileColor =
+                  d.status === "today" ? "bg-green-100 border-green-300" :
+                  d.status === "present" ? "bg-green-100 border-green-200" :
+                  d.status === "absent" ? "bg-red-100 border-red-200" :
+                  d.status === "late" ? "bg-orange-100 border-orange-200" :
+                  d.status === "future" ? "bg-slate-100 border-slate-200" :
+                  "bg-slate-50 border-slate-100";
+
+                const dotColor =
+                  d.status === "today" ? "bg-green-500" :
+                  d.status === "present" ? "bg-green-500" :
+                  d.status === "absent" ? "bg-red-500" :
+                  d.status === "late" ? "bg-orange-400" :
+                  "bg-slate-300";
+
+                const dateColor =
+                  d.status === "today" ? "text-green-800 font-black" :
+                  d.status === "present" ? "text-green-800" :
+                  d.status === "absent" ? "text-red-700" :
+                  d.status === "late" ? "text-orange-700" :
+                  "text-slate-400";
+
+                return (
+                  <div
+                    key={i}
+                    className={`aspect-square rounded-xl border flex flex-col items-center justify-center gap-1 transition-all ${tileColor}`}
+                  >
+                    <span className={`text-sm font-bold ${dateColor}`}>{d.date}</span>
+                    <div className={`w-2 h-2 rounded-full ${dotColor}`} />
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Legend & Rate */}
+            <div className="flex items-center justify-between mt-4">
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-1.5 text-xs text-slate-500"><div className="w-3 h-3 rounded-full bg-green-500" />Present</div>
+                <div className="flex items-center gap-1.5 text-xs text-slate-500"><div className="w-3 h-3 rounded-full bg-orange-400" />Late</div>
+                <div className="flex items-center gap-1.5 text-xs text-slate-500"><div className="w-3 h-3 rounded-full bg-red-500" />Absent</div>
+              </div>
+              <span className="text-sm font-black text-slate-800">{attendanceStats.percentage}% Attendance Rate</span>
             </div>
           </motion.div>
 

@@ -44,11 +44,7 @@ export function CourseCard({
       className="bg-white rounded-[14px] border border-slate-100 overflow-hidden cursor-pointer group"
       style={{ boxShadow: "0 1px 2px rgba(15,23,42,0.04), 0 4px 16px rgba(15,23,42,0.03)" }}
     >
-      {/* Top color strip */}
-      <div
-        className="h-1.5 w-full"
-        style={{ background: `linear-gradient(90deg, ${color}, ${color}88)` }}
-      />
+
 
       <div className="p-5">
         {/* Header row */}

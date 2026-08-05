@@ -61,7 +61,7 @@ export default function StudentDashboard() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#4C1D95] via-[#5B21B6] to-[#6D28D9] p-6 text-white shadow-lg shadow-purple-900/15 border border-purple-500/20"
+        className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#4C1D95] via-[#5B21B6] to-[#6D28D9] p-6 text-white border border-purple-500/20"
       >
         {/* Subtle glow effect */}
         <div className="absolute -top-24 -right-24 w-72 h-72 bg-purple-400/10 rounded-full blur-2xl pointer-events-none" />
@@ -93,7 +93,7 @@ export default function StudentDashboard() {
               <span className="text-purple-100">Overall Program Progress</span>
               <span className="text-white font-black text-sm">{currentStudent.courseProgress}%</span>
             </div>
-            <div className="h-2.5 bg-black/20 backdrop-blur-xs rounded-full overflow-hidden p-0.5 border border-white/10">
+            <div className="h-2.5 bg-black/20 backdrop-blur-xs rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${currentStudent.courseProgress}%` }}
@@ -159,7 +159,7 @@ export default function StudentDashboard() {
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6">
         {/* Left column — 2/3 */}
-        <div className="lg:col-span-2 space-y-4 lg:space-y-6">
+        <div className="lg:col-span-2 space-y-4 lg:space-y-6 flex flex-col">
           {/* Recent Lessons */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -187,7 +187,7 @@ export default function StudentDashboard() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="bg-white rounded-[14px] border border-slate-100 p-5"
+            className="bg-white rounded-[14px] border border-slate-100 p-5 flex flex-col flex-1"
             style={{ boxShadow: "0 1px 2px rgba(15,23,42,0.04)" }}
           >
             <div className="flex items-start justify-between mb-4">
@@ -206,7 +206,7 @@ export default function StudentDashboard() {
                 </div>
               </div>
             </div>
-            <div className="h-48">
+            <div className="flex-1 min-h-[12rem] h-48 mt-4">
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={performanceData} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
                   <defs>

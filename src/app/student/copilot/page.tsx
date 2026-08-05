@@ -61,7 +61,7 @@ export default function AISocraticCopilotPage() {
   };
 
   return (
-    <div className="p-4 lg:p-6 pb-24 space-y-6 max-w-6xl mx-auto">
+    <div className="p-4 lg:p-6 pb-24 space-y-6">
       {/* Header Banner */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
@@ -70,7 +70,7 @@ export default function AISocraticCopilotPage() {
       >
         <div className="space-y-1 z-10">
           <div className="flex items-center gap-2">
-            <Badge className="bg-orange-500 text-white font-bold text-[10px] uppercase">
+            <Badge className="bg-orange-500 border-none text-white font-bold text-[10px] uppercase">
               24/7 AI Socratic Tutor
             </Badge>
             <span className="text-purple-200 text-xs flex items-center gap-1">
@@ -112,9 +112,9 @@ export default function AISocraticCopilotPage() {
         </div>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Main Chat Interface */}
-        <div className="lg:col-span-3 flex flex-col h-[600px]">
+        <div className="lg:col-span-2 flex flex-col h-[600px]">
           <Card className="flex-1 p-4 rounded-2xl border-slate-100 bg-white shadow-sm flex flex-col overflow-hidden">
             {/* Message History */}
             <div className="flex-1 overflow-y-auto space-y-4 p-2 hide-scrollbar">
@@ -176,7 +176,7 @@ export default function AISocraticCopilotPage() {
         </div>
 
         {/* Right Sidebar: Preset Topics & Escalation */}
-        <div className="space-y-6">
+        <div className="space-y-6 flex flex-col h-full">
           <Card className="p-4 rounded-2xl border-slate-100 bg-white shadow-sm space-y-3">
             <div className="flex items-center gap-2 text-slate-800 font-bold text-sm">
               <Lightbulb size={16} className="text-amber-500" /> Topic Suggestions
@@ -196,7 +196,7 @@ export default function AISocraticCopilotPage() {
           </Card>
 
           {/* Instructor Escalation Card */}
-          <Card className="p-4 rounded-2xl border-purple-100 bg-purple-50/40 space-y-3 text-center">
+          <Card className="p-4 rounded-2xl border-purple-100 bg-purple-50/40 space-y-3 text-center flex-1 flex flex-col justify-center">
             <HelpCircle size={24} className="text-purple-600 mx-auto" />
             <h4 className="font-bold text-purple-950 text-xs m-0">Still stuck after AI explanation?</h4>
             <p className="text-[11px] text-purple-800/80 m-0">

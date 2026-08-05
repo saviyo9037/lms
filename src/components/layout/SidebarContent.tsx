@@ -96,7 +96,7 @@ export function SidebarContent({ menuItems, role = "student", onClose, isSheet }
       </nav>
 
       {/* Switch portals */}
-      <div className="px-3 pb-2 space-y-1">
+      {/* <div className="px-3 pb-2 space-y-1">
         <div className="section-heading px-2">Portals</div>
         {role !== "student" && (
           <Link href="/student/dashboard">
@@ -138,7 +138,7 @@ export function SidebarContent({ menuItems, role = "student", onClose, isSheet }
             </>
           )}
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

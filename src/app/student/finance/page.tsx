@@ -70,28 +70,30 @@ export default function FinanceEMIPage() {
               {INSTALLMENTS.map((item, idx) => (
                 <div
                   key={idx}
-                  className={`p-4 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${
-                    item.status === "Pending" ? "border-orange-200 bg-orange-50/30" : "border-slate-100 bg-slate-50/50"
+                  className={`p-4 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3 transition-all ${
+                    item.status === "Pending"
+                      ? "border-orange-200 dark:border-orange-900/50 bg-orange-50/40 dark:bg-orange-950/30"
+                      : "border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/60"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div className={`w-9 h-9 rounded-xl flex items-center justify-center shrink-0 ${
-                      item.status === "Paid" ? "bg-green-100 text-green-700" : "bg-orange-500 text-white"
+                      item.status === "Paid" ? "bg-green-100 dark:bg-green-950/60 text-green-700 dark:text-green-400" : "bg-orange-500 text-white"
                     }`}>
                       {item.status === "Paid" ? <CheckCircle2 size={18} /> : <Clock size={18} />}
                     </div>
                     <div>
-                      <h4 className="font-bold text-slate-800 text-sm m-0">{item.term}</h4>
-                      <div className="text-xs text-slate-500 mt-0.5">
+                      <h4 className="font-bold text-slate-800 dark:text-slate-100 text-sm m-0">{item.term}</h4>
+                      <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                         Due Date: {item.dueDate} {item.receiptNo && `• Receipt: ${item.receiptNo}`}
                       </div>
                     </div>
                   </div>
 
                   <div className="flex items-center gap-3 justify-end shrink-0">
-                    <span className="text-sm font-black text-slate-800">₹{item.amount.toLocaleString()}</span>
+                    <span className="text-sm font-black text-slate-800 dark:text-slate-100">₹{item.amount.toLocaleString()}</span>
                     {item.status === "Paid" ? (
-                      <Button size="sm" variant="outline" className="rounded-xl border-slate-200 text-xs gap-1">
+                      <Button size="sm" variant="outline" className="rounded-xl border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs gap-1">
                         <FileText size={13} /> Receipt PDF
                       </Button>
                     ) : (
@@ -107,14 +109,14 @@ export default function FinanceEMIPage() {
                         </DialogTrigger>
                         <DialogContent className="max-w-md rounded-2xl text-center">
                           <DialogHeader>
-                            <DialogTitle className="font-bold text-slate-800 text-base">
+                            <DialogTitle className="font-bold text-slate-800 dark:text-slate-100 text-base">
                               Pay {activeInstallment?.term}
                             </DialogTitle>
                           </DialogHeader>
                           <div className="space-y-4 pt-2">
-                            <div className="p-4 bg-slate-50 rounded-xl border border-slate-100 space-y-2">
-                              <div className="text-2xl font-black text-purple-900">₹{activeInstallment?.amount.toLocaleString()}</div>
-                              <div className="text-xs text-slate-500">Scan UPI QR code using PhonePe, GPay, or Paytm</div>
+                            <div className="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 space-y-2">
+                              <div className="text-2xl font-black text-purple-900 dark:text-purple-300">₹{activeInstallment?.amount.toLocaleString()}</div>
+                              <div className="text-xs text-slate-500 dark:text-slate-400">Scan UPI QR code using PhonePe, GPay, or Paytm</div>
                             </div>
                             <div className="w-44 h-44 mx-auto bg-slate-900 text-white rounded-xl flex items-center justify-center p-3 font-mono text-xs shadow-md">
                               [OSTRAX_UPI_QR_CODE]
@@ -138,18 +140,18 @@ export default function FinanceEMIPage() {
           <Card className="p-5 rounded-2xl border-slate-100 bg-white shadow-sm space-y-4">
             <div className="flex items-center gap-2">
               <Award size={18} className="text-amber-500" />
-              <h3 className="font-bold text-slate-800 text-base m-0">Scholarships & Concessions</h3>
+              <h3 className="font-bold text-slate-800 dark:text-slate-100 text-base m-0">Scholarships & Concessions</h3>
             </div>
 
             <div className="space-y-3">
               {SCHOLARSHIPS.map((s, i) => (
-                <div key={i} className="p-3.5 rounded-xl border border-slate-100 bg-slate-50 space-y-1.5">
+                <div key={i} className="p-3.5 rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/60 space-y-1.5">
                   <div className="flex items-center justify-between">
-                    <h4 className="font-bold text-slate-800 text-xs m-0">{s.name}</h4>
-                    <Badge className="bg-purple-100 text-purple-700 text-[10px] font-bold">{s.benefit}</Badge>
+                    <h4 className="font-bold text-slate-800 dark:text-slate-100 text-xs m-0">{s.name}</h4>
+                    <Badge className="bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 text-[10px] font-bold">{s.benefit}</Badge>
                   </div>
-                  <p className="text-[11px] text-slate-500 m-0">{s.criteria}</p>
-                  <div className="text-[10px] font-semibold text-orange-600 pt-1">{s.status}</div>
+                  <p className="text-[11px] text-slate-500 dark:text-slate-400 m-0">{s.criteria}</p>
+                  <div className="text-[10px] font-semibold text-orange-600 dark:text-orange-400 pt-1">{s.status}</div>
                 </div>
               ))}
             </div>

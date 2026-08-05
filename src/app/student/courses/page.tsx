@@ -24,29 +24,35 @@ export default function CoursesPage() {
 
   return (
     <div className="p-4 lg:p-6 pb-24">
-      {/* Header */}
+      {/* Header Banner */}
       <motion.div
-        initial={{ opacity: 0, y: -8 }}
+        initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-6"
+        className="purple-gradient-card rounded-2xl p-6 relative overflow-hidden flex flex-col md:flex-row items-start md:items-center justify-between gap-4"
       >
-        <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center justify-between">
-          <div>
-            <div className="flex items-center gap-2 mb-1">
-              <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-100">8 Programs</Badge>
-              <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-100">2 Categories</Badge>
-            </div>
-            <p className="text-sm text-slate-500">Technical programs (skill-based OJT) + Management diplomas</p>
+        <div className="space-y-1.5 z-10">
+          <div className="flex items-center gap-2">
+            <Badge className="bg-orange-500 border-none text-white font-bold text-[10px] uppercase">
+              Ostrax Program Catalog
+            </Badge>
+            <span className="text-purple-200 text-xs flex items-center gap-1">
+              <BookOpen size={14} className="text-purple-300" /> 8 Specialized Programs
+            </span>
           </div>
-          <div className="relative w-full sm:w-64">
-            <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-            <Input
-              placeholder="Search courses..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="pl-9 rounded-xl border-slate-200 bg-white text-sm h-10"
-            />
-          </div>
+          <h1 className="text-2xl font-black text-white m-0">Course Programs & Diplomas</h1>
+          <p className="text-xs text-purple-100/90 leading-relaxed m-0">
+            Technical programs (skill-based OJT) + AI Integrated Management diplomas.
+          </p>
+        </div>
+
+        <div className="relative w-full sm:w-72 z-10 shrink-0">
+          <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-purple-200" />
+          <Input
+            placeholder="Search courses..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="pl-9 rounded-xl border-white/20 bg-white/10 text-white placeholder:text-purple-200 text-sm h-10 backdrop-blur-md"
+          />
         </div>
       </motion.div>
 

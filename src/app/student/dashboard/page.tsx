@@ -238,19 +238,19 @@ export default function StudentDashboard() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.35 }}
-            className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-[14px] p-4 flex items-start gap-3"
+            className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 border border-amber-200 dark:border-amber-900/50 rounded-[14px] p-4 flex items-start gap-3"
           >
-            <div className="w-9 h-9 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
-              <IndianRupee size={18} className="text-amber-600" />
+            <div className="w-9 h-9 bg-amber-100 dark:bg-amber-900/50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <IndianRupee size={18} className="text-amber-600 dark:text-amber-400" />
             </div>
             <div className="flex-1">
-              <div className="font-semibold text-amber-900 text-sm">Fee Payment Due</div>
-              <div className="text-xs text-amber-700 mt-0.5">
+              <div className="font-semibold text-amber-900 dark:text-amber-200 text-sm">Fee Payment Due</div>
+              <div className="text-xs text-amber-700 dark:text-amber-300 mt-0.5">
                 ₹{currentStudent.pendingFee.toLocaleString("en-IN")} due on August 15, 2026
               </div>
-              <div className="text-[11px] text-amber-600 mt-1">Avoid late fee penalty of ₹500</div>
+              <div className="text-[11px] text-amber-600 dark:text-amber-400 mt-1">Avoid late fee penalty of ₹500</div>
             </div>
-            <button className="text-xs font-semibold bg-amber-500 text-white px-3 py-1.5 rounded-lg hover:bg-amber-600 transition-colors flex-shrink-0">
+            <button className="text-xs font-semibold bg-amber-500 hover:bg-amber-600 text-white px-3 py-1.5 rounded-lg transition-colors flex-shrink-0 shadow-sm">
               Pay Now
             </button>
           </motion.div>

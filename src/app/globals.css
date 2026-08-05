@@ -350,11 +350,20 @@ h6 {
 }
 
 .theme-dark .bg-white {
-  background-color: #0A0914 !important;
+  background-color: #121024 !important;
   color: #F8FAFC !important;
 }
 
-.theme-dark .text-slate-800 {
+.theme-dark .bg-slate-50,
+.theme-dark .bg-slate-50\/60,
+.theme-dark .bg-slate-50\/70,
+.theme-dark .bg-slate-100 {
+  background-color: #1A1733 !important;
+  color: #E2E8F0 !important;
+}
+
+.theme-dark .text-slate-800,
+.theme-dark .text-slate-700 {
   color: #F8FAFC !important;
 }
 
@@ -362,9 +371,14 @@ h6 {
   color: #CBD5E1 !important;
 }
 
+.theme-dark .text-slate-500,
+.theme-dark .text-slate-400 {
+  color: #94A3B8 !important;
+}
+
 .theme-dark .border-slate-100,
 .theme-dark .border-slate-200 {
-  border-color: #1E1B33 !important;
+  border-color: #242045 !important;
 }
 
 .theme-dark .sidebar-item {

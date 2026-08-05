@@ -26,7 +26,7 @@ export const currentStudent = {
 export const sidebarMenuItems = [
   { label: "Dashboard", href: "/student/dashboard", icon: "LayoutDashboard" },
   { label: "AI Study Planner", href: "/student/planner", icon: "TrendingUp" },
-  { label: "AI Socratic Copilot", href: "/student/copilot", icon: "Star" },
+  { label: "AI Mentor", href: "/student/copilot", icon: "Star" },
   { label: "Courses", href: "/student/courses", icon: "BookOpen" },
   { label: "Assignments", href: "/student/assignments", icon: "ClipboardList" },
   { label: "Placement Drive", href: "/student/placement", icon: "Briefcase" },

@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Ostrax Brand — Deep Purple primary, Vibrant Orange accent */
+  /* Apzxrtra Brand — Deep Purple primary, Vibrant Orange accent */
   --background: oklch(0.985 0.003 240);
   --foreground: oklch(0.145 0.02 250);
   --card: oklch(1 0 0);

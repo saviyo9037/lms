@@ -123,7 +123,7 @@ export function Header({ title, subtitle, menuItems, role = "student", userName,
         <DropdownMenuContent align="end" className="w-52 rounded-xl border-slate-100">
           <DropdownMenuLabel className="px-4 py-3">
             <div className="font-semibold text-slate-800 text-sm">{userName || "Arjun Krishnan"}</div>
-            <div className="text-xs text-slate-500 mt-0.5">ostrax.edu</div>
+            <div className="text-xs text-slate-500 mt-0.5">apzxrtra.edu</div>
           </DropdownMenuLabel>
           <DropdownMenuSeparator />
           <Link href="/student/profile">
@@ -134,7 +134,7 @@ export function Header({ title, subtitle, menuItems, role = "student", userName,
           </Link>
           <DropdownMenuSeparator />
           <Link href="/about">
-            <DropdownMenuItem className="cursor-pointer text-sm">About Ostrax</DropdownMenuItem>
+            <DropdownMenuItem className="cursor-pointer text-sm">About Apzxrtra</DropdownMenuItem>
           </Link>
           <Link href="/admin/dashboard">
             {/* <DropdownMenuItem className="cursor-pointer text-sm text-purple-600">Admin Portal</DropdownMenuItem> */}

@@ -77,7 +77,7 @@ export default function AISocraticCopilotPage() {
               <Brain size={13} className="text-amber-300" /> Deep Conceptual Learning Active
             </span>
           </div>
-          <h1 className="text-2xl font-black text-white m-0">Ostrax AI Copilot Tutor</h1>
+          <h1 className="text-2xl font-black text-white m-0">Apzxrtra AI Copilot Tutor</h1>
           <p className="text-xs text-purple-100/90 leading-relaxed m-0">
             Ask any question on technical hardware, management diplomas, or coding. I guide your reasoning step-by-step.
           </p>

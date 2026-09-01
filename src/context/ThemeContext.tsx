@@ -17,7 +17,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   // Load from localStorage
   useEffect(() => {
     try {
-      const saved = localStorage.getItem("ostrax_theme_mode");
+      const saved = localStorage.getItem("apzxrtra_theme_mode");
       if (saved === "dark" || saved === "light") {
         setMode(saved as ThemeMode);
       }
@@ -39,7 +39,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
 
     try {
-      localStorage.setItem("ostrax_theme_mode", mode);
+      localStorage.setItem("apzxrtra_theme_mode", mode);
     } catch (e) {
       console.error(e);
     }

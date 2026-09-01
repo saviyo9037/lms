@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/context/ThemeContext";
+import { Logo } from "@/components/shared/Logo";
 
 const iconMap: Record<string, React.ReactNode> = {
   LayoutDashboard: <LayoutDashboard size={18} />,
@@ -50,12 +51,8 @@ export function SidebarContent({ menuItems, role = "student", onClose, isSheet }
             <X size={18} />
           </button>
         )}
-        <div className="flex items-center gap-3">
-          <img 
-            src="/ostrax_logo_final.webp" 
-            alt="Ostrax Institute of Management & Technology" 
-            className="h-10 w-auto object-contain"
-          />
+        <div className="flex items-center">
+          <Logo size="md" />
         </div>
 
         {/* Role pill */}

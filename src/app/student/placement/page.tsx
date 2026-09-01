@@ -66,7 +66,7 @@ export default function PlacementDrivePage() {
         <div className="space-y-1.5 z-10">
           <div className="flex items-center gap-2">
             <Badge className="bg-orange-500 border-none text-white font-bold text-[10px] uppercase">
-              Ostrax Placement Cell ERP
+              Apzxrtra Placement Cell ERP
             </Badge>
             <span className="text-purple-200 text-xs flex items-center gap-1">
               <ShieldCheck size={14} className="text-green-300" /> Verified Student Profile Active
@@ -191,7 +191,7 @@ export default function PlacementDrivePage() {
             <UserCheck size={32} className="mx-auto text-purple-400 mb-3" />
             <div className="text-[11px] text-purple-300 uppercase font-bold tracking-wider mb-2">ATS Resume Match</div>
             <div className="text-6xl font-black text-white mb-4">92%</div>
-            <Badge className="bg-green-500/20 text-green-300 mx-auto border-none w-fit">Verified Ostrax Format</Badge>
+            <Badge className="bg-green-500/20 text-green-300 mx-auto border-none w-fit">Verified Apzxrtra Format</Badge>
           </Card>
         </div>
       </div>

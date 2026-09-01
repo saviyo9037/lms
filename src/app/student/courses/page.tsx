@@ -33,7 +33,7 @@ export default function CoursesPage() {
         <div className="space-y-1.5 z-10">
           <div className="flex items-center gap-2">
             <Badge className="bg-orange-500 border-none text-white font-bold text-[10px] uppercase">
-              Ostrax Program Catalog
+              Apzxrtra Program Catalog
             </Badge>
             <span className="text-purple-200 text-xs flex items-center gap-1">
               <BookOpen size={14} className="text-purple-300" /> 8 Specialized Programs

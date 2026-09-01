@@ -9,7 +9,7 @@ import { adminMenuItems } from "@/data/mockData";
 import { usePathname } from "next/navigation";
 
 const pageTitles: Record<string, { title: string; subtitle: string }> = {
-  "/admin/dashboard": { title: "Admin Dashboard", subtitle: "Ostrax LMS — System Overview" },
+  "/admin/dashboard": { title: "Admin Dashboard", subtitle: "Apzxrtra LMS — System Overview" },
   "/admin/students": { title: "Student Management", subtitle: "1,248 enrolled students" },
   "/admin/academics": { title: "Academic Management", subtitle: "Courses, schedules & faculty" },
   "/admin/reports": { title: "Reports & Analytics", subtitle: "Performance metrics and insights" },
@@ -19,7 +19,7 @@ const pageTitles: Record<string, { title: string; subtitle: string }> = {
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const pageInfo = pageTitles[pathname] || { title: "Admin Portal", subtitle: "Ostrax LMS" };
+  const pageInfo = pageTitles[pathname] || { title: "Admin Portal", subtitle: "Apzxrtra LMS" };
 
   useEffect(() => { setMobileOpen(false); }, [pathname]);
 

@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { riseValues, hiringPartners } from "@/data/mockData";
 import { Separator } from "@/components/ui/separator";
+import { Logo } from "@/components/shared/Logo";
 import Link from "next/link";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 
@@ -15,15 +16,7 @@ export default function AboutPage() {
     <div className="min-h-screen bg-background">
       {/* Sticky nav */}
       <div className="bg-white border-b border-slate-100 px-6 py-3 flex items-center justify-between sticky top-0 z-10">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-            <span className="text-white font-black text-sm">O</span>
-          </div>
-          <div>
-            <div className="text-[#4C1D95] font-black text-base">ostrax</div>
-            <div className="text-[10px] text-slate-400 uppercase tracking-wide">institute of mgmt & tech</div>
-          </div>
-        </div>
+        <Logo size="md" />
         <Link href="/student/dashboard" className="text-xs text-purple-600 font-semibold flex items-center gap-1 hover:text-purple-700">
           <ArrowLeft size={13} /> Back to LMS
         </Link>
@@ -47,7 +40,7 @@ export default function AboutPage() {
               Perinthalmanna, Malappuram, Kerala
             </div>
             <h1 className="text-4xl lg:text-5xl font-black leading-tight mb-4">
-              Ostrax Institute of<br />
+              Apzxrtra Institute of<br />
               <span className="text-orange-400">Management & Technology</span>
             </h1>
             <p className="text-purple-200 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -91,7 +84,7 @@ export default function AboutPage() {
               <Star size={12} fill="currentColor" /> Core Values
             </div>
             <h2 className="text-3xl font-black text-slate-800">Our R.I.S.E. Values</h2>
-            <p className="text-slate-500 mt-2 text-sm">The four pillars that guide everything we do at Ostrax</p>
+            <p className="text-slate-500 mt-2 text-sm">The four pillars that guide everything we do at Apzxrtra</p>
           </motion.div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -235,15 +228,15 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center">
-              <span className="text-white font-black text-lg">O</span>
+              <span className="text-white font-black text-lg">A</span>
             </div>
             <div>
-              <div className="text-white font-black text-xl">ostrax</div>
+              <div className="text-white font-black text-xl">apzxrtra</div>
               <div className="text-slate-400 text-[10px] uppercase tracking-widest">institute of management & technology</div>
             </div>
           </div>
           <p className="text-slate-400 text-xs">Founded by Najma · Perinthalmanna, Malappuram, Kerala</p>
-          <p className="text-slate-500 text-[11px] mt-1">© 2026 Ostrax Institute. All rights reserved.</p>
+          <p className="text-slate-500 text-[11px] mt-1">© 2026 Apzxrtra Institute. All rights reserved.</p>
           <div className="mt-4">
             <Link href="/student/dashboard" className="text-xs text-purple-400 hover:text-purple-300 transition-colors">
               ← Go to Student Portal

@@ -75,10 +75,10 @@ export default function AdminSettingsPage() {
           <h3 className="font-bold text-slate-800 mb-4">Institute Information</h3>
           <div className="space-y-3">
             {[
-              { label: "Institute Name", value: "Ostrax Institute of Management & Technology" },
+              { label: "Institute Name", value: "Apzxrtra Institute of Management & Technology" },
               { label: "Location", value: "Perinthalmanna, Kerala" },
               { label: "Founder", value: "Najma" },
-              { label: "Contact Email", value: "info@ostrax.edu" },
+              { label: "Contact Email", value: "info@apzxrtra.edu" },
             ].map((f) => (
               <div key={f.label}>
                 <Label className="text-xs font-semibold text-slate-500 mb-1 block">{f.label}</Label>

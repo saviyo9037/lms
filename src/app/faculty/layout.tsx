@@ -17,7 +17,7 @@ const pageTitles: Record<string, { title: string; subtitle: string }> = {
 export default function FacultyLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const pageInfo = pageTitles[pathname] || { title: "Faculty Portal", subtitle: "Ostrax LMS" };
+  const pageInfo = pageTitles[pathname] || { title: "Faculty Portal", subtitle: "Apzxrtra LMS" };
 
   useEffect(() => { setMobileOpen(false); }, [pathname]);
 

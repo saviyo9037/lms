@@ -4,14 +4,14 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
-  title: "Ostrax LMS — Institute of Management & Technology",
+  title: "Apzxrtra LMS — Institute of Management & Technology",
   description:
-    "Ostrax Institute of Management & Technology — A premier education institute in Perinthalmanna, Kerala. 95% placement rate. Skill-based technical and management programs.",
-  keywords: "Ostrax, LMS, Management, Technology, Perinthalmanna, Kerala, Smartphone Repair, HR Management",
-  authors: [{ name: "Ostrax Institute" }],
+    "Apzxrtra Institute of Management & Technology — A premier education institute in Perinthalmanna, Kerala. 95% placement rate. Skill-based technical and management programs.",
+  keywords: "Apzxrtra, LMS, Management, Technology, Perinthalmanna, Kerala, Smartphone Repair, HR Management",
+  authors: [{ name: "Apzxrtra Institute" }],
   openGraph: {
-    title: "Ostrax LMS",
-    description: "Premium Learning Management System for Ostrax Institute",
+    title: "Apzxrtra LMS",
+    description: "Premium Learning Management System for Apzxrtra Institute",
     type: "website",
   },
 };

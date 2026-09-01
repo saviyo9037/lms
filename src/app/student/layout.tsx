@@ -23,7 +23,7 @@ const pageTitles: Record<string, { title: string; subtitle: string }> = {
 export default function StudentLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const pageInfo = pageTitles[pathname] || { title: "Ostrax LMS", subtitle: "Learning Management System" };
+  const pageInfo = pageTitles[pathname] || { title: "Apzxrtra LMS", subtitle: "Learning Management System" };
 
   // Close mobile menu on route change
   useEffect(() => {

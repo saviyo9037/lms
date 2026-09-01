@@ -31,7 +31,7 @@ export default function AdminDashboard() {
           <div>
             <div className="text-purple-200 text-xs font-semibold uppercase tracking-wider mb-1">Admin Portal</div>
             <h2 className="text-xl font-black">Welcome back, Najma 👋</h2>
-            <p className="text-purple-200 text-sm mt-1">Ostrax Institute of Management & Technology</p>
+            <p className="text-purple-200 text-sm mt-1">Apzxrtra Institute of Management & Technology</p>
             <p className="text-purple-300 text-xs mt-0.5">Perinthalmanna, Kerala · Founded by Najma</p>
           </div>
           <div className="text-right hidden sm:block">

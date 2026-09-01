@@ -56,7 +56,7 @@ export default function ResumePage() {
                 <button className="text-xs text-purple-600 flex items-center gap-1 hover:text-purple-700"><Edit2 size={12} /> Edit</button>
               </div>
               <p className="text-sm text-slate-600 leading-relaxed">
-                Motivated Smartphone Service Re-Engineering student at Ostrax Institute, Perinthalmanna. 8 months into
+                Motivated Smartphone Service Re-Engineering student at Apzxrtra Institute, Perinthalmanna. 8 months into
                 On-Job Training with 94% attendance. Skilled in hardware diagnostics, PCB repair, and display module servicing.
                 Ranked #12 out of 240 students. Seeking opportunities to apply technical expertise in a professional service environment.
               </p>
@@ -96,7 +96,7 @@ export default function ResumePage() {
                   </div>
                   <div>
                     <div className="font-semibold text-slate-800 text-sm">Smartphone Service Re-Engineering</div>
-                    <div className="text-xs text-purple-700 font-medium">Ostrax Institute of Management & Technology</div>
+                    <div className="text-xs text-purple-700 font-medium">Apzxrtra Institute of Management & Technology</div>
                     <div className="text-xs text-slate-500 mt-0.5">2024 – 2025 (18 months) · Perinthalmanna, Kerala</div>
                     <div className="text-xs text-slate-500 mt-1 leading-relaxed">
                       6 months institutional training + 12 months On-Job Training (OJT) at certified service centers.

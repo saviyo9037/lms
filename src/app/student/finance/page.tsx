@@ -119,7 +119,7 @@ export default function FinanceEMIPage() {
                               <div className="text-xs text-slate-500 dark:text-slate-400">Scan UPI QR code using PhonePe, GPay, or Paytm</div>
                             </div>
                             <div className="w-44 h-44 mx-auto bg-slate-900 text-white rounded-xl flex items-center justify-center p-3 font-mono text-xs shadow-md">
-                              [OSTRAX_UPI_QR_CODE]
+                              [APZXRTRA_UPI_QR_CODE]
                             </div>
                             <Button className="w-full bg-purple-700 hover:bg-purple-800 text-white rounded-xl text-xs font-bold py-2.5">
                               Upload Payment Screenshot Proof
